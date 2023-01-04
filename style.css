@@ -1,8 +1,43 @@
+*{
+
+padding: 0%;
+margin: 0;
+
+}
 #wrapper{
     height: 250px;
     width: 250px;
     border: 1px;
     border-style:solid ;
     background-color: white;
-    display: block;
+    display: contents;
+}
+
+.wrapper{
+    height: 250px;
+    width: 250px;
+    border: 1px;
+    border-style:solid ;
+    background-color: white;
+    display: contents;
+}
+.imgContainer{
+    width: 100%;
+    text-align: center;
+    border: 2px;
+    border-style: solid;
+}
+
+.header{
+    font-family: 'Franklin Gothic Medium';
+    color: white;
+    width: 100;
+    background-image: linear-gradient(to right,rgb(253, 43, 43),rgb(255, 181, 44));
+    padding: 20px;
+}
+
+#display{
+
+    width: 250px;
+    height: 250px;
 }

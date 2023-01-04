@@ -7,43 +7,55 @@
     <link rel="stylesheet" href="style.css">
     <title>PUP MAP</title>
     <!-- <script src="script.js"></script> -->
+
     <script>
-        
 
-function showSceneryBox(imgScource, heading, description){
-    let d = document.getElementById("display");
-    let e = document.getElementById("body");
-    e.style.overflow = "hidden";
-    document.addEventListener('mousemove', displayFollowCamera);
-    d.style.left = event.clientX + 5 + "px";
-    d.style.top = event.clientY + 5 + "px";
-    d.innerHTML = "<div id='wrapper'><img id='imgid' src='" + imgScource + "'>" + "<p>" + heading  + "</p>" + description + "</p></div>";
-}
-function displayFollowCamera(){
-    let a = document.getElementById('display');
-    a.style.left = event.clientX + 5 + "px";
-    a.style.top = event.clientY + 5 + "px";
-}
+        function showSceneryBox(imgScource, heading, description){
+            let d = document.getElementById("display");
+            let e = document.getElementById("body");
+            e.style.overflow = "hidden";
+            document.addEventListener('mousemove', displayFollowCamera);
+            d.style.left = event.clientX + 5 + "px";
+            d.style.top = event.clientY + 5 + "px";
+            d.innerHTML = "<div id='wrapper'><img id='imgid' src='" + imgScource + "'>" + "<p>" + heading  + "</p>" + description + "</p></div>";
+        }
+        function displayFollowCamera(){
+            let a = document.getElementById('display');
+            a.style.left = event.clientX + 5 + "px";
+            a.style.top = event.clientY + 5 + "px";
+        }
 
-function removeSceneryBox(){
-    let a = document.getElementById("display");
-    let b = document.getElementById("body");
-    a.removeAttribute('style');
-    b.removeAttribute('style');
-    document.removeEventListener('mousemove', displayFollowCamera);
-    a.removeChild(a.childNodes[0]);
-}
+        function removeSceneryBox(){
+            let a = document.getElementById("display");
+            let b = document.getElementById("body");
+            a.removeAttribute('style');
+            b.removeAttribute('style');
+            document.removeEventListener('mousemove', displayFollowCamera);
+            a.removeChild(a.childNodes[0]);
+        }
+
     </script>
+
 </head>
 <body id="body">
  
     <main>
-        <h1>PUP Navigator</h1>    
-            <img src="sources\Map.png" alt="PUP Map" id="pupmap" usemap="#map">
+        <div class="header">
+            <h1>PUP Navigator</h1>
+         </div>    
+            <div class="imgContainer">
+                <img src="sources\Map.png" alt="PUP Map" id="pupmap" usemap="#map">
+            </div>
+        <map name="map">
+            <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" onmouseover="showSceneryBox('sources/1-ampi.jpg','Amphitheater','Text here')" onmouseout="removeSceneryBox()">
 
-            <map name="map">
-                <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" onmouseover="showSceneryBox('sources/1-ampi.jpg','Amphitheater','Text here')" onmouseout="removeSceneryBox()">
-            </map>
-    </main>        
+            <area shape="poly" coords="283,70,322,70,322,94,313,102,299,102,293,96,293,79,283,79" href="#" alt="Banda Kawayan, Sining Lahi Headquarters" onmouseover="showSceneryBox('sources/2.jpg','Banda Kawayan, Sining Lahi Headquarters','Text here')" onmouseout="removeSceneryBox()">
+
+            <area shape="poly" coords="340,783,374,783,370,778,390,778,398,783,430,783,430,807,340,807" href="#" alt=" Building and Grounds Maintenance Office" onmouseover="showSceneryBox('sources/1-ampi.jpg','Building and Grounds Maintenance Office','Text here')" onmouseout="removeSceneryBox()">
+
+        </map>
+
+    </main>    
+
 </body>
 </html>
