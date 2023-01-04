@@ -6,38 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>PUP MAP</title>
-    <script src="script.js"></script>
-</head>
-<body>
-    
-    <div class="container">
+    <!-- <script src="script.js"></script> -->
+    <script>
+        
 
+function showSceneryBox(imgScource, heading, description){
+    let d = document.getElementById("display");
+    let e = document.getElementById("body");
+    e.style.overflow = "hidden";
+    document.addEventListener('mousemove', displayFollowCamera);
+    d.style.left = event.clientX + 5 + "px";
+    d.style.top = event.clientY + 5 + "px";
+    d.innerHTML = "<div id='wrapper'><img id='imgid' src='" + imgScource + "'>" + "<p>" + heading  + "</p>" + description + "</p></div>";
+}
+function displayFollowCamera(){
+    let a = document.getElementById('display');
+    a.style.left = event.clientX + 5 + "px";
+    a.style.top = event.clientY + 5 + "px";
+}
+
+function removeSceneryBox(){
+    let a = document.getElementById("display");
+    let b = document.getElementById("body");
+    a.removeAttribute('style');
+    b.removeAttribute('style');
+    document.removeEventListener('mousemove', displayFollowCamera);
+    a.removeChild(a.childNodes[0]);
+}
+    </script>
+</head>
+<body id="body">
+ 
+    <main>
         <h1>PUP Navigator</h1>    
-        <div class="pupMap">
             <img src="sources\Map.png" alt="PUP Map" id="pupmap" usemap="#map">
 
             <map name="map">
                 <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" onmouseover="showSceneryBox('sources/1-ampi.jpg','Amphitheater','Text here')" onmouseout="removeSceneryBox()">
-<!-- 
-                <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" 
-                onmouseover="showSceneryBox"> -->
-
-<!-- 
-                <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" onmouseover="showSceneryBox('sources/1-ampi.jpg','Amphitheater','Text here')" onmouseout="removeSceneryBox()">
-
-                <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" onmouseover="showSceneryBox('sources/1-ampi.jpg','Amphitheater','Text here')" onmouseout="removeSceneryBox()">
-
-                <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" onmouseover="showSceneryBox('sources/1-ampi.jpg','Amphitheater','Text here')" onmouseout="removeSceneryBox()">
-
-                <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" onmouseover="showSceneryBox('sources/1-ampi.jpg','Amphitheater','Text here')" onmouseout="removeSceneryBox()">
-
-                <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" onmouseover="showSceneryBox('sources/1-ampi.jpg','Amphitheater','Text here')" onmouseout="removeSceneryBox()">
-
-                <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" onmouseover="showSceneryBox('sources/1-ampi.jpg','Amphitheater','Text here')" onmouseout="removeSceneryBox()"> -->
             </map>
-
-        </div>
-    </div>
-
+    </main>        
 </body>
 </html>

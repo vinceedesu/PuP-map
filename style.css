@@ -1,0 +1,8 @@
+#wrapper{
+    height: 250px;
+    width: 250px;
+    border: 1px;
+    border-style:solid ;
+    background-color: white;
+    display: block;
+}
