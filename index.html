@@ -5,57 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>PUP MAP</title>
-    <!-- <script src="script.js"></script> -->
-
-    <script>
-
-        function showSceneryBox(imgScource, heading, description){
-            let d = document.getElementById("display");
-            let e = document.getElementById("body");
-            e.style.overflow = "hidden";
-            document.addEventListener('mousemove', displayFollowCamera);
-            d.style.left = event.clientX + 5 + "px";
-            d.style.top = event.clientY + 5 + "px";
-            d.innerHTML = "<div id='wrapper'><img id='imgid' src='" + imgScource + "'>" + "<p>" + heading  + "</p>" + description + "</p></div>";
-        }
-        function displayFollowCamera(){
-            let a = document.getElementById('display');
-            a.style.left = event.clientX + 5 + "px";
-            a.style.top = event.clientY + 5 + "px";
-        }
-
-        function removeSceneryBox(){
-            let a = document.getElementById("display");
-            let b = document.getElementById("body");
-            a.removeAttribute('style');
-            b.removeAttribute('style');
-            document.removeEventListener('mousemove', displayFollowCamera);
-            a.removeChild(a.childNodes[0]);
-        }
-
-    </script>
+    <title>PUP Navigator</title>
+    <script src="script.js" defer></script>
+    <link rel="icon" href="sources\pup logo.png" type="image/icon type">
 
 </head>
 <body id="body">
  
+    <div id="display"></div>
     <main>
         <div class="header">
+            <img src="sources\pup logo.png" alt="pup logo">
             <h1>PUP Navigator</h1>
          </div>    
             <div class="imgContainer">
                 <img src="sources\Map.png" alt="PUP Map" id="pupmap" usemap="#map">
             </div>
         <map name="map">
-            <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" onmouseover="showSceneryBox('sources/1-ampi.jpg','Amphitheater','Text here')" onmouseout="removeSceneryBox()">
+            <area shape="poly" coords="413,445,426,436,440,436,448,450,468,456,463,472,448,484,430,486,415,483,404,473,388,462,498,456,406,456" href="#" alt="Amphitheater" onmouseover="showSceneryBox('sources/1-ampi.jpg','Amphitheater','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
 
-            <area shape="poly" coords="283,70,322,70,322,94,313,102,299,102,293,96,293,79,283,79" href="#" alt="Banda Kawayan, Sining Lahi Headquarters" onmouseover="showSceneryBox('sources/2.jpg','Banda Kawayan, Sining Lahi Headquarters','Text here')" onmouseout="removeSceneryBox()">
+            <area shape="poly" coords="283,70,322,70,322,94,313,102,299,102,293,96,293,79,283,79" href="#" alt="Banda Kawayan, Sining Lahi Headquarters" onmouseover="showSceneryBox('sources/2.jpg','Banda Kawayan, Sining Lahi Headquarters','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
 
-            <area shape="poly" coords="340,783,374,783,370,778,390,778,398,783,430,783,430,807,340,807" href="#" alt=" Building and Grounds Maintenance Office" onmouseover="showSceneryBox('sources/1-ampi.jpg','Building and Grounds Maintenance Office','Text here')" onmouseout="removeSceneryBox()">
+            <area shape="poly" coords="2820,487,832,477,845,468,860,460,878,455,896,455,911,457,927,461,940,468,954,478,964,488,972,500,979,513,984,529,986,556,982,579,970,601,889,718,875,731,861,741,843,748,828,752,803,753,777,745,758,734,741,717,731,701,724,682,721,664,722,647,726,630,736,607,809,503" href="#" alt="Oval Open Field" onmouseover="showSceneryBox('sources/3 - oval.jpg','Oval Open Field','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="poly" coords="601,106,723,107,723,170,601,170" href="#" alt="Swimming Pool" onmouseover="showSceneryBox('sources/4 - pool.jpg','Swimming Pool','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+            
+            <area shape="poly" coords="747,94,933,94,933,188,748,94" href="#" alt="Gymnasium" onmouseover="showSceneryBox('sources/5- GYM.JPG','Gymnasium','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="poly" coords="460,269,463,325,458,341,447,346,436,378,428,400,411,419,385,434,470,433,507,423,507,415,516,407,525,404,525,378,517,363,508,356,503,342,489,335,487,327,498,317,493,262,477,259" href="#" alt="Lagoon" onmouseover="showSceneryBox('sources/6 - LAGOON.jpg','Lagoon','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="poly" coords="1028,361,1045,345,1070,345,1070,355,1087,372,1104,372,1106,403,1091,406,1072,426,1049,427,1046,406,1034,391,1020,390,1011,382,1015,366" href="#" alt="Main Gate" onmouseover="showSceneryBox('sources/7 - main gate.jpg','Main Gate','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="poly" coords="767,465,789,490,722,587,701,572" href="#" alt="Grand Stand" onmouseover="showSceneryBox('sources/8 - grand stand.jpg','Grand Stand','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="poly" coords="1038,438,1049,437,1043,415,1043,404,1034,396,1025,395,1010,388,1002,387,889,387,889,400,1003,399,1016,401,1013,409,1015,420,1025,425,1037,423" href="#" alt="PUP Mural and the Shrine of Heroism " onmouseover="showSceneryBox('sources/9 - rural hero.webp','PUP Mural and the Shrine of Heroism ','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            
+            <area shape="poly" coords="639,239,648,233,712,343,723,349,755,349,764,341,777,341,784,350,1010,353,1011,364,782,362,773,369,764,369,755,360,720,360,702,352" href="#" alt="Cat Walk" onmouseover="showSceneryBox('sources/10 - cat walk.jpg','Cat Walk','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="poly" coords="    336,97,385,84,409,178,492,156,505,199,419,228,445,321,398,337,371,233,354,237,345,205,365,199" href="#" alt="Ninoy Aquino Library and Learning Resources Center" onmouseover="showSceneryBox('sources/11 - NINOY LIBRARY.jpg','Ninoy Aquino Library and Learning Resources Center','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="circle" coords="203, 212, 90" href="#" alt="Laboratory High School" onmouseover="showSceneryBox('sources/12 - LAB HIGH.webp','Laboratory High School','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="circle" coords="556,673, 83" href="#" alt="Interfaith Chapel" onmouseover="showSceneryBox('sources/13 - chapel.jpg','Interfaith Chapel','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="circle" coords="641,374, 35" href="#" alt="PUP Obelisk (and the Mabini Monument)" onmouseover="showSceneryBox('sources/14 - obe.jpg','PUP Obelisk (and the Mabini Monument)','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            
+            <area shape="circle" coords="321,147, 35" href="#" alt="water tank" onmouseover="showSceneryBox('sources/15 - water tank.webp','Water Tank','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="circle" coords="594,500,30" href="#" alt="Flag Pole" onmouseover="showSceneryBox('sources/16 - Flag pole.jpg','Flag Pole','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="circle" coords="531,373,40" href="#" alt="Centennial Monument" onmouseover="showSceneryBox('sources/17 - Centennial_Marker.jpg','Centennial Monument','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="circle" coords="1028,342,35" href="#" alt="PUP Pylon" onmouseover="showSceneryBox('sources/18 - pylon.jpg','PUP Pylon','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            <area shape="poly" coords="692,234,757,235,757,295,691,294" href="#" alt="Open Court" onmouseover="showSceneryBox('sources/19 - open court.jpg','Open Court','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
+            
+            <area shape="poly" coords="187,412,241,445,209,499,171,475,191,445,171,435" href="#" alt="Sampaguita Building" onmouseover="showSceneryBox('sources/20 - sampaguita bldg.jpg','Sampaguita Building','Lorem ipsum dolor sit amet consectetur adipisicing elit.')" onmouseout="removeSceneryBox()">
+
 
         </map>
-
-    </main>    
+    </main>   
 
 </body>
 </html>
